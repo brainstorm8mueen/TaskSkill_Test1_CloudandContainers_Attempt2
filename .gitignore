@@ -3,6 +3,6 @@ build/
 __pycache__/
 *.pyc
 .DS_Store
-.env.example
+.env
 .env.local
 *.log
