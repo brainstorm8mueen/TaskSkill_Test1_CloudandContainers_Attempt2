@@ -9,5 +9,3 @@ Add screenshots here before final submission:
 7. `07-production-api.png`
 8. `08-service-logs.png`
 9. `09-network-inspect.png`
-
-Do not fabricate evidence. Capture these after running the application on your local/EC2 host.
