@@ -1,15 +1,17 @@
 Failure Test:
 I stopped only the development backend to understand how service failure affects the application.
-
+---
 docker compose stop backend-dev
-
+---
 The development API became unavailable while the production backend remained independent.
 
 I then restarted the development service:
-
+---
 docker compose start backend-dev
-
+---
 and confirmed its health endpoint again.
+
+
 
 My Points:
 What I would change for a real production deployment
