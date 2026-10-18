@@ -1,0 +1,37 @@
+services:
+  backend-dev:
+    build: ./backend/dev
+    container_name: multienv-backend-dev
+    env_file: ./backend/dev/.env
+    ports: ["3001:3001"]
+    networks: [multienv-network]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3001/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  backend-prod:
+    build: ./backend/prod
+    container_name: multienv-backend-prod
+    env_file: ./backend/prod/.env
+    ports: ["3002:3002"]
+    networks: [multienv-network]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3002/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    container_name: multienv-frontend
+    ports: ["3000:80"]
+    depends_on:
+      backend-dev: {condition: service_healthy}
+      backend-prod: {condition: service_healthy}
+    networks: [multienv-network]
+    restart: unless-stopped
+networks:
+  multienv-network:
+    driver: bridge

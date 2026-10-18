@@ -1,0 +1,8 @@
+Student Name: Mueen Aziz Bhombal
+Repository URL: https://github.com/brainstorm8mueen/TaskSkill_Test1_CloudandContainers_Attempt2
+Deployment Status: Working (configuration validated; run Docker tests on submission host)
+Access URLs:
+- Development: http://localhost:3000/dev
+- Production: http://localhost:3000/prod
+- Frontend: http://localhost:3000
+Date of Submission: 18-10-2026
