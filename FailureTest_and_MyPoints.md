@@ -1,4 +1,4 @@
-Failure Test
+Failure Test:
 I stopped only the development backend to understand how service failure affects the application.
 
 docker compose stop backend-dev
@@ -11,7 +11,7 @@ docker compose start backend-dev
 
 and confirmed its health endpoint again.
 
-
+My Points:
 What I would change for a real production deployment
 This assessment is designed for local deployment, but for a real production environment I would consider:
 
